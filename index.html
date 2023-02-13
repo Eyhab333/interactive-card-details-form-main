@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <style>
+      body {
+        font-family: "Space Grotesk", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="cards-container">
+        <div class="card front">
+          <div class="logo-container">
+            <img src="./images/card-logo.svg" alt="logo" />
+          </div>
+          <div class="zeros">0000 0000 0000 0000</div>
+          <div class="name-and-date">
+            <h1 class="name">JANE APPLESEED</h1>
+            <p>00/00</p>
+          </div>
+        </div>
+        <div class="card back">
+          <div class="black-rectangle"></div>
+          <div class="grey-rectangle">000</div>
+          <div class="pattern">
+            <img src="./images/pattern-back-card.svg" alt="pattern" />
+          </div>
+        </div>
+      </div>
+
+      <form class="form-container">
+        <div class="field-container">
+          <label for="name">Cardholder Name</label>
+          <input
+            id="name"
+            name="CardholderName"
+            maxlength="20"
+            type="text"
+            placeholder="e.g. Jane Appleseed"
+            required
+          />
+          <span id="error-message">111111</span>
+        </div>
+        <div class="field-container">
+          <label for="cardnumber">Card Number</label>
+          <input
+            id="cardnumber"
+            name="CardNumber"
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            placeholder="e.g. 1234 5678 9123 0000"
+            required
+          />
+        </div>
+        <div class="field-container">
+          <label for="expirationdate">Exp. Date (MM/YY)</label>
+          <input
+            id="expirationdateMonth"
+            name="expirationdateMonth"
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            placeholder="MM"
+            required
+            class="month"
+          />
+
+          <input
+            id="expirationdateYear"
+            name="expirationdateYear"
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            placeholder="YY"
+            required
+            class="year"
+          />
+        </div>
+
+        <div class="field-container">
+          <label for="securitycode">CVC</label>
+          <input
+            id="securitycode"
+            name="securitycode"
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            placeholder="e.g. 123"
+            required
+          />
+        </div>
+        <button id="confirm">Confirm</button>
+      </form>
+
+      <!-- Completed state start -->
+      <div class="thanks hide">
+        <div class="icon-complete">
+          <img src="./images/icon-complete.svg" alt="complete">
+        </div>
+        <h2>THANK YOU!</h2>
+        <p>We’ve added your card details</p>
+        <button class="continue">Continue</button>
+      </div>
+    </main>
+    <footer style="height: 186px"></footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
