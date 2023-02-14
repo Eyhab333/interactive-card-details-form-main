@@ -27,6 +27,8 @@
   </head>
   <body>
     <main>
+
+      <!-- cards-container -->
       <div class="cards-container">
         <div class="card front">
           <div class="logo-container">
@@ -35,30 +37,33 @@
           <div class="zeros">0000 0000 0000 0000</div>
           <div class="name-and-date">
             <h1 class="name">JANE APPLESEED</h1>
-            <p>00/00</p>
+            <p><span class="date-month">00</span>/<span class="date-year">00</span></p>
           </div>
         </div>
         <div class="card back">
           <div class="black-rectangle"></div>
-          <div class="grey-rectangle">000</div>
+          <div class="grey-rectangle cvc">000</div>
           <div class="pattern">
             <img src="./images/pattern-back-card.svg" alt="pattern" />
           </div>
         </div>
       </div>
 
-      <form class="form-container">
+      <!-- form-container -->
+      <form action="/" class="form-container" novalidate>
         <div class="field-container">
           <label for="name">Cardholder Name</label>
           <input
-            id="name"
+            id="nameInput"
             name="CardholderName"
             maxlength="20"
+            pattern="^[a-zA-Z .]+$"
             type="text"
             placeholder="e.g. Jane Appleseed"
             required
           />
-          <span id="error-message">111111</span>
+          <div id="name-blank" class="name-error">Can’t be blank</div>
+          <div id="name-rong-format" class="name-error">wrong format, letters only</div>
         </div>
         <div class="field-container">
           <label for="cardnumber">Card Number</label>
@@ -66,35 +71,42 @@
             id="cardnumber"
             name="CardNumber"
             type="text"
-            pattern="[0-9]*"
+            pattern="^[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}$"
+            maxlength="19"
             inputmode="numeric"
             placeholder="e.g. 1234 5678 9123 0000"
             required
           />
+          <div id="number-blank" class="name-error">Can’t be blank</div>
+          <div id="number-rong-format" class="name-error">wrong format, letters only</div>
         </div>
         <div class="field-container">
           <label for="expirationdate">Exp. Date (MM/YY)</label>
-          <input
-            id="expirationdateMonth"
-            name="expirationdateMonth"
-            type="text"
-            pattern="[0-9]*"
-            inputmode="numeric"
-            placeholder="MM"
-            required
-            class="month"
-          />
-
-          <input
-            id="expirationdateYear"
-            name="expirationdateYear"
-            type="text"
-            pattern="[0-9]*"
-            inputmode="numeric"
-            placeholder="YY"
-            required
-            class="year"
-          />
+          <div>
+            <input
+              id="expirationdateMonth"
+              name="expirationdateMonth"
+              type="text"
+              pattern="[0-9]*"
+              inputmode="numeric"
+              placeholder="MM"
+              required
+              class="month"
+              maxlength="2"
+            />
+            <input
+              id="expirationdateYear"
+              name="expirationdateYear"
+              type="text"
+              pattern="[0-9]*"
+              inputmode="numeric"
+              placeholder="YY"
+              required
+              class="year"
+              maxlength="2"
+            />
+          </div>
+          <span class="date-error" aria-live="polite"></span>
         </div>
 
         <div class="field-container">
@@ -107,12 +119,14 @@
             inputmode="numeric"
             placeholder="e.g. 123"
             required
+            maxlength="3"
           />
+          <span class="cvc-error" aria-live="polite"></span>
         </div>
-        <button id="confirm">Confirm</button>
+        <button type="submit" value="" id="confirm">Confirm</button>
       </form>
 
-      <!-- Completed state start -->
+      <!-- Completed state -->
       <div class="thanks hide">
         <div class="icon-complete">
           <img src="./images/icon-complete.svg" alt="complete">
@@ -123,7 +137,6 @@
       </div>
     </main>
     <footer style="height: 186px"></footer>
-
     <script src="main.js"></script>
   </body>
 </html>

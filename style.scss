@@ -106,7 +106,15 @@ ul {
 }
 
 .continue {
+  margin-top: 48px;
   width: 100%;
+  background: #21092f;
+  border-radius: 8px;
+  width: 381px;
+  height: 53px;
+  color: white;
+  margin-top: 13px;
+  cursor: pointer;
 }
 
 
@@ -116,13 +124,20 @@ ul {
   position: relative;
 }
 
-#error-message {
+.name-error,
+.number-error,
+.date-error,
+.cvc-error {
   position: absolute;
   left: 0;
   bottom: -22px;
   font-weight: 500;
   font-size: 12px;
   color: #ff5050;
+}
+
+.show {
+  display: block;
 }
 
 /*##### for-phone-only ##########*/
@@ -254,13 +269,14 @@ ul {
     opacity: 0.25;
   }
 
-  button {
+  #confirm {
     background: #21092f;
     border-radius: 8px;
     width: 100%;
     height: 53px;
     color: white;
     margin-top: toRem(28);
+    cursor: pointer;
   }
 
   .form-container .field-container:first-of-type {
@@ -279,7 +295,7 @@ ul {
     grid-area: security;
   }
 
-  button {
+  #confirm {
     grid-area: confirm;
   }
 
@@ -335,6 +351,18 @@ ul {
 
   .month {
     margin-right: toRem(10);
+  }
+
+  .continue {
+    margin-top: 48px;
+    width: 100%;
+    background: #21092f;
+    border-radius: 8px;
+    width: 381px;
+    height: 53px;
+    color: white;
+    margin-top: 13px;
+    cursor: pointer;
   }
 }
 
@@ -464,13 +492,14 @@ ul {
     opacity: 0.25;
   }
 
-  button {
+  #confirm {
     background: #21092f;
     border-radius: 8px;
     width: 381px;
     height: 53px;
     color: white;
     margin-top: 13px;
+    cursor: pointer;
   }
 
   .form-container .field-container:first-of-type {
@@ -489,7 +518,7 @@ ul {
     grid-area: security;
   }
 
-  button {
+  #confirm {
     grid-area: confirm;
   }
 
@@ -546,16 +575,18 @@ ul {
   }
 
   .thanks {
+    
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .thanks p {
     margin-bottom: 30px;
   }
 
-  .thanks button {
-    width: 80%;
-  }
+  
 
   .hide {
     display: none;
@@ -564,4 +595,16 @@ ul {
 
 .hide {
   display: none;
+}
+
+.continue {
+  border: 20px solid green;
+  width: 80%;
+  background: #21092f;
+  border-radius: 8px;
+  width: 381px;
+  height: 53px;
+  color: white;
+  margin-top: 13px;
+  cursor: pointer;
 }
