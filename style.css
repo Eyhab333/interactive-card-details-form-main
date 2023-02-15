@@ -219,6 +219,7 @@ ul {
   .grey-rectangle {
     width: 14.375rem;
     padding: 0.5625rem;
+    padding-right: 0.625rem;
     background: #adb5be;
     border-radius: 0.25rem;
     display: flex;
@@ -422,6 +423,7 @@ ul {
     letter-spacing: 0.125rem;
     color: #ffffff;
     margin-bottom: 2.0625rem;
+    padding-right: 0.625rem;
   }
   .pattern {
     width: 11.625rem;

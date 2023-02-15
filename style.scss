@@ -240,6 +240,7 @@ ul {
   .grey-rectangle {
     width: toRem(230);
     padding: toRem(9);
+    padding-right: toRem(10);
     background: #adb5be;
     border-radius: toRem(4);
     display: flex;
@@ -474,6 +475,7 @@ ul {
     letter-spacing: toRem(2);
     color: #ffffff;
     margin-bottom: toRem(33);
+    padding-right: toRem(10);
   }
 
   .pattern {
