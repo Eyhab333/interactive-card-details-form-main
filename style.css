@@ -72,7 +72,7 @@ ul {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .icon-complete {
@@ -83,31 +83,31 @@ ul {
 
 .thanks h2 {
   font-weight: 500;
-  font-size: 28px;
-  line-height: 36px;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
   text-align: center;
-  letter-spacing: 3.42222px;
+  letter-spacing: 0.21388875rem;
   color: #21092f;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .thanks p {
   font-weight: 500;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 1.125rem;
+  line-height: 1.4375rem;
   text-align: center;
   color: #8f8694;
 }
 
 .continue {
-  margin-top: 48px;
+  margin-top: 3rem;
   width: 100%;
   background: #21092f;
-  border-radius: 8px;
-  width: 381px;
-  height: 53px;
+  border-radius: 0.5rem;
+  width: 23.8125rem;
+  height: 3.3125rem;
   color: white;
-  margin-top: 13px;
+  margin-top: 0.8125rem;
   cursor: pointer;
 }
 
@@ -121,9 +121,9 @@ ul {
 .cvc-error {
   position: absolute;
   left: 0;
-  bottom: -22px;
+  bottom: -1.375rem;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #ff5050;
 }
 
@@ -152,11 +152,11 @@ ul {
     filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
     position: relative;
     margin-bottom: 3rem;
-    height: 281px;
+    height: 17.5625rem;
   }
   .card {
     width: 90%;
-    border-radius: 10px;
+    border-radius: 0.625rem;
   }
   .front {
     background-image: url(./images/bg-card-front.png);
@@ -174,7 +174,7 @@ ul {
   .zeros {
     font-weight: 500;
     font-size: 1.125rem;
-    letter-spacing: 3.42222px;
+    letter-spacing: 0.21388875rem;
     color: white;
     margin-bottom: 1.0625rem;
   }
@@ -186,7 +186,7 @@ ul {
     font-weight: 500;
     font-size: 0.5625rem;
     line-height: 1.125rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     text-transform: uppercase;
     color: #ffffff;
   }
@@ -194,7 +194,7 @@ ul {
     font-weight: 500;
     font-size: 0.5625rem;
     line-height: 1.125rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     text-transform: uppercase;
     color: #ffffff;
   }
@@ -203,7 +203,7 @@ ul {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(168.73deg, #ffffff 5%, #d2d3d9 91.69%);
-    border-radius: 10px;
+    border-radius: 0.625rem;
     padding-top: 0.875rem;
     padding-bottom: 0.6875rem;
     position: absolute;
@@ -212,49 +212,49 @@ ul {
   }
   .black-rectangle {
     width: 100%;
-    height: 54px;
+    height: 3.375rem;
     background: #2f2f2f;
     margin-bottom: 0.9375rem;
   }
   .grey-rectangle {
-    width: 230.98px;
-    padding: 9px;
+    width: 14.375rem;
+    padding: 0.5625rem;
     background: #adb5be;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
     text-align: right;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     color: #ffffff;
     margin-bottom: 0.6875rem;
   }
   .pattern {
-    width: 186px;
-    height: 26px;
+    width: 11.625rem;
+    height: 1.625rem;
   }
   ::-moz-placeholder {
     font-weight: 500;
     font-size: 0.75rem;
-    line-height: 23px;
+    line-height: 1.4375rem;
     color: #21092f;
     opacity: 0.25;
   }
   ::placeholder {
     font-weight: 500;
     font-size: 0.75rem;
-    line-height: 23px;
+    line-height: 1.4375rem;
     color: #21092f;
     opacity: 0.25;
   }
   #confirm {
     background: #21092f;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     width: 100%;
-    height: 53px;
+    height: 3.3125rem;
     color: white;
     margin-top: 1.75rem;
     cursor: pointer;
@@ -278,30 +278,30 @@ ul {
     display: grid;
     grid-row-gap: 1.25rem;
     grid-template-areas: "name name" "number number" "expiration security" "confirm confirm";
-    max-width: 400px;
-    padding: 20px;
+    max-width: 25rem;
+    padding: 1.25rem;
     color: #707070;
   }
   label {
     padding-bottom: 0.5625rem;
     font-size: 0.75rem;
     line-height: 0.9375rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     text-transform: uppercase;
     color: #21092f;
   }
   input {
-    margin-top: 3px;
-    padding-left: 16px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+    margin-top: 0.1875rem;
+    padding-left: 1rem;
+    padding-top: 0.6875rem;
+    padding-bottom: 0.6875rem;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 1.125rem;
+    line-height: 1.4375rem;
     color: #21092f;
     width: 100%;
     border: 1px solid #dfdee0;
-    border-radius: 8px;
+    border-radius: 0.5rem;
   }
   input:focus {
     border-color: linear-gradient(180deg, hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
@@ -315,14 +315,13 @@ ul {
     margin-right: 0.625rem;
   }
   .continue {
-    margin-top: 48px;
-    width: 100%;
+    margin-top: 3rem;
+    width: 90%;
     background: #21092f;
-    border-radius: 8px;
-    width: 381px;
-    height: 53px;
+    border-radius: 0.5rem;
+    height: 3.3125rem;
     color: white;
-    margin-top: 13px;
+    margin-top: 0.8125rem;
     cursor: pointer;
   }
 }
@@ -352,7 +351,7 @@ ul {
   }
   .card {
     width: 85%;
-    border-radius: 10px;
+    border-radius: 0.625rem;
   }
   .front {
     background-image: url(./images/bg-card-front.png);
@@ -367,7 +366,7 @@ ul {
   .zeros {
     font-weight: 500;
     font-size: 1.75rem;
-    letter-spacing: 3.42222px;
+    letter-spacing: 0.21388875rem;
     color: white;
     margin-bottom: 1.5625rem;
   }
@@ -377,17 +376,17 @@ ul {
   }
   .name {
     font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 2px;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.125rem;
     text-transform: uppercase;
     color: #ffffff;
   }
   .name-and-date p {
     font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 2px;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.125rem;
     text-transform: uppercase;
     color: #ffffff;
   }
@@ -398,57 +397,57 @@ ul {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(168.73deg, #ffffff 5%, #d2d3d9 91.69%);
-    border-radius: 10px;
+    border-radius: 0.625rem;
     padding-top: 1.4375rem;
     padding-bottom: 2.9375rem;
   }
   .black-rectangle {
     width: 100%;
-    height: 54px;
+    height: 3.375rem;
     background: #2f2f2f;
     margin-bottom: 1.5rem;
   }
   .grey-rectangle {
-    width: 361px;
-    height: 38px;
+    width: 22.5625rem;
+    height: 2.375rem;
     background: #adb5be;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
     text-align: right;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     color: #ffffff;
     margin-bottom: 2.0625rem;
   }
   .pattern {
-    width: 186px;
-    height: 26px;
+    width: 11.625rem;
+    height: 1.625rem;
   }
   ::-moz-placeholder {
     font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 1.125rem;
+    line-height: 1.4375rem;
     color: #21092f;
     opacity: 0.25;
   }
   ::placeholder {
     font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 1.125rem;
+    line-height: 1.4375rem;
     color: #21092f;
     opacity: 0.25;
   }
   #confirm {
     background: #21092f;
-    border-radius: 8px;
-    width: 381px;
-    height: 53px;
+    border-radius: 0.5rem;
+    width: 23.8125rem;
+    height: 3.3125rem;
     color: white;
-    margin-top: 13px;
+    margin-top: 0.8125rem;
     cursor: pointer;
   }
   .form-container .field-container:first-of-type {
@@ -468,32 +467,32 @@ ul {
   }
   .form-container {
     display: grid;
-    grid-row-gap: 26px;
+    grid-row-gap: 1.625rem;
     grid-template-areas: "name name" "number number" "expiration security" "confirm confirm";
-    max-width: 400px;
-    padding: 20px;
+    max-width: 25rem;
+    padding: 1.25rem;
     color: #707070;
   }
   label {
     padding-bottom: 0.5625rem;
     font-size: 0.75rem;
     line-height: 0.9375rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     text-transform: uppercase;
     color: #21092f;
   }
   input {
-    margin-top: 3px;
-    padding-left: 16px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+    margin-top: 0.1875rem;
+    padding-left: 1rem;
+    padding-top: 0.6875rem;
+    padding-bottom: 0.6875rem;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 1.125rem;
+    line-height: 1.4375rem;
     color: #21092f;
     width: 100%;
     border: 1px solid #dfdee0;
-    border-radius: 8px;
+    border-radius: 0.5rem;
   }
   input:focus {
     outline: none;
@@ -515,7 +514,7 @@ ul {
     align-items: center;
   }
   .thanks p {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
   .hide {
     display: none;

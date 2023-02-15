@@ -243,8 +243,8 @@ ul {
     background: #adb5be;
     border-radius: toRem(4);
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
     font-weight: 500;
     font-size: toRem(14);
     line-height: toRem(18);
@@ -323,16 +323,16 @@ ul {
 
   input {
     margin-top: toRem(3);
-    padding-left: 16px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+    padding-left: toRem(16);
+    padding-top: toRem(11);
+    padding-bottom: toRem(11);
     font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: toRem(18);
+    line-height: toRem(23);
     color: #21092f;
     width: 100%;
     border: 1px solid #dfdee0;
-    border-radius: 8px;
+    border-radius: toRem(8);
   }
 
   input:focus {
@@ -354,14 +354,13 @@ ul {
   }
 
   .continue {
-    margin-top: 48px;
-    width: 100%;
+    margin-top: toRem(48);
+    width: 90%;
     background: #21092f;
-    border-radius: 8px;
-    width: 381px;
-    height: 53px;
+    border-radius: toRem(8);
+    height: toRem(53);
     color: white;
-    margin-top: 13px;
+    margin-top: toRem(13);
     cursor: pointer;
   }
 }
@@ -395,7 +394,7 @@ ul {
 
   .card {
     width: 85%;
-    border-radius: 10px;
+    border-radius: toRem(10);
   }
 
   .front {
@@ -413,7 +412,7 @@ ul {
   .zeros {
     font-weight: 500;
     font-size: toRem(28);
-    letter-spacing: 3.42222px;
+    letter-spacing: toRem(3.42222);
     color: white;
     margin-bottom: toRem(25);
   }
@@ -425,18 +424,18 @@ ul {
 
   .name {
     font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 2px;
+    font-size: toRem(14);
+    line-height: toRem(18);
+    letter-spacing: toRem(2);
     text-transform: uppercase;
     color: #ffffff;
   }
 
   .name-and-date p {
     font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 2px;
+    font-size: toRem(14);
+    line-height: toRem(18);
+    letter-spacing: toRem(2);
     text-transform: uppercase;
     color: #ffffff;
   }
@@ -448,57 +447,57 @@ ul {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(168.73deg, #ffffff 5%, #d2d3d9 91.69%);
-    border-radius: 10px;
+    border-radius: toRem(10);
     padding-top: toRem(23);
     padding-bottom: toRem(47);
   }
 
   .black-rectangle {
     width: 100%;
-    height: 54px;
+    height: toRem(54);
     background: #2f2f2f;
     margin-bottom: toRem(24);
   }
 
   .grey-rectangle {
-    width: 361px;
-    height: 38px;
+    width: toRem(361);
+    height: toRem(38);
     background: #adb5be;
-    border-radius: 4px;
+    border-radius: toRem(4);
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: toRem(14);
+    line-height: toRem(18);
     text-align: right;
-    letter-spacing: 2px;
+    letter-spacing: toRem(2);
     color: #ffffff;
     margin-bottom: toRem(33);
   }
 
   .pattern {
-    width: 186px;
-    height: 26px;
+    width: toRem(186);
+    height: toRem(26);
   }
 
   // ====================
 
   ::placeholder {
     font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: toRem(18);
+    line-height: toRem(23);
     color: #21092f;
     opacity: 0.25;
   }
 
   #confirm {
     background: #21092f;
-    border-radius: 8px;
-    width: 381px;
-    height: 53px;
+    border-radius: toRem(8);
+    width: toRem(381);
+    height: toRem(53);
     color: white;
-    margin-top: 13px;
+    margin-top: toRem(13);
     cursor: pointer;
   }
 
@@ -524,14 +523,14 @@ ul {
 
   .form-container {
     display: grid;
-    grid-row-gap: 26px;
+    grid-row-gap: toRem(26);
     grid-template-areas:
       "name name"
       "number number"
       "expiration security"
       "confirm confirm";
-    max-width: 400px;
-    padding: 20px;
+    max-width: toRem(400);
+    padding: toRem(20);
     color: #707070;
   }
 
@@ -539,23 +538,23 @@ ul {
     padding-bottom: toRem(9);
     font-size: toRem(12);
     line-height: toRem(15);
-    letter-spacing: 2px;
+    letter-spacing: toRem(2);
     text-transform: uppercase;
     color: #21092f;
   }
 
   input {
-    margin-top: 3px;
-    padding-left: 16px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+    margin-top: toRem(3);
+    padding-left: toRem(16);
+    padding-top: toRem(11);
+    padding-bottom: toRem(11);
     font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: toRem(18);
+    line-height: toRem(23);
     color: #21092f;
     width: 100%;
     border: 1px solid #dfdee0;
-    border-radius: 8px;
+    border-radius: toRem(8);
   }
 
   input:focus {
@@ -583,7 +582,7 @@ ul {
   }
 
   .thanks p {
-    margin-bottom: 30px;
+    margin-bottom: toRem(30);
   }
 
   
