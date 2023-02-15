@@ -31,40 +31,40 @@ window.onload = function () {
 // ========== handle name ============
 let cardNameInput = document.getElementById("nameInput");
 let errorMsgBlankName = document.getElementById("name-blank");
-let errorMsgRongFormatName = document.getElementById("name-rong-format");
+let errorMsgWrongFormatName = document.getElementById("name-wrong-format");
 let regexName = /^[a-z\s?]+$/gi;
 
 cardNameInput.addEventListener("keyup", () => {
   if (cardNameInput.value.match(regexName)) {
     errorMsgBlankName.style.display = "none";
-    errorMsgRongFormatName.style.display = "none";
+    errorMsgWrongFormatName.style.display = "none";
   } else if (cardNameInput.value == "") {
     errorMsgBlankName.style.display = "block";
-    errorMsgRongFormatName.style.display = "none";
+    errorMsgWrongFormatName.style.display = "none";
   } else {
     errorMsgBlankName.style.display = "none";
-    errorMsgRongFormatName.style.display = "block";
+    errorMsgWrongFormatName.style.display = "block";
   }
 });
 
 // ============== handle card number =======================
 let cardNumberInput = document.getElementById("cardnumber");
 let errorMsgBlankNumber = document.getElementById("number-blank");
-let errorMsgRongFormatNumber = document.getElementById("number-rong-format");
+let errorMsgWrongFormatNumber = document.getElementById("number-wrong-format");
 let regexNumber = /^[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}$/;
 
 cardNumberInput.addEventListener("keyup", () => {
   if (cardNumberInput.value.match(regexNumber)) {
     errorMsgBlankNumber.style.display = "none";
-    errorMsgRongFormatNumber.style.display = "none";
+    errorMsgWrongFormatNumber.style.display = "none";
     return;
   } else if (cardNumberInput.value == "") {
     errorMsgBlankNumber.style.display = "block";
-    errorMsgRongFormatNumber.style.display = "none";
+    errorMsgWrongFormatNumber.style.display = "none";
     return;
   } else {
     errorMsgBlankNumber.style.display = "none";
-    errorMsgRongFormatNumber.style.display = "block";
+    errorMsgWrongFormatNumber.style.display = "block";
     return;
   }
 });
@@ -73,41 +73,41 @@ cardNumberInput.addEventListener("keyup", () => {
 // ==== Month ====
 let cardDateMonthInput = document.getElementById("expirationdateMonth");
 let errorMsgBlankexpiration = document.getElementById("expirationdate-blank");
-let errorMsgRongFormatexpiration = document.getElementById(
-  "expirationdate-rong-format"
+let errorMsgWrongFormatexpiration = document.getElementById(
+  "expirationdate-wrong-format"
 );
-let regexexpiration = /^\d{1,2}$/g;
+let regexexpirationMonth = /^([1-9]|1[012])$/;
 
 cardDateMonthInput.addEventListener("keyup", () => {
-  if (cardDateMonthInput.value.match(regexexpiration)) {
+  if (cardDateMonthInput.value.match(regexexpirationMonth)) {
     errorMsgBlankexpiration.style.display = "none";
-    errorMsgRongFormatexpiration.style.display = "none";
+    errorMsgWrongFormatexpiration.style.display = "none";
     return;
   } else if (cardDateMonthInput.value == "") {
     errorMsgBlankexpiration.style.display = "block";
-    errorMsgRongFormatexpiration.style.display = "none";
+    errorMsgWrongFormatexpiration.style.display = "none";
     return;
   } else {
     errorMsgBlankexpiration.style.display = "none";
-    errorMsgRongFormatexpiration.style.display = "block";
+    errorMsgWrongFormatexpiration.style.display = "block";
     return;
   }
 });
 // ==== Year =====
 let cardDateYearInput = document.getElementById("expirationdateYear");
-
+let regexexpiration = /^\d{1,2}$/g;
 cardDateYearInput.addEventListener("keyup", () => {
   if (cardDateYearInput.value.match(regexexpiration)) {
     errorMsgBlankexpiration.style.display = "none";
-    errorMsgRongFormatexpiration.style.display = "none";
+    errorMsgWrongFormatexpiration.style.display = "none";
     return;
   } else if (cardDateYearInput.value == "") {
     errorMsgBlankexpiration.style.display = "block";
-    errorMsgRongFormatexpiration.style.display = "none";
+    errorMsgWrongFormatexpiration.style.display = "none";
     return;
   } else {
     errorMsgBlankexpiration.style.display = "none";
-    errorMsgRongFormatexpiration.style.display = "block";
+    errorMsgWrongFormatexpiration.style.display = "block";
     return;
   }
 });
@@ -115,22 +115,22 @@ cardDateYearInput.addEventListener("keyup", () => {
 // ============= handle cvc ================
 let cvcInput = document.getElementById("securitycode");
 let errorMsgBlankcvc = document.getElementById("securitycode-blank");
-let errorMsgRongFormatcvc = document.getElementById("securitycode-rong-format");
+let errorMsgWrongFormatcvc = document.getElementById("securitycode-wrong-format");
 let regexcvc = /\d/g;
 
 cvcInput.addEventListener("keyup", () => {
   if (cvcInput.value.match(regexcvc)) {
     errorMsgBlankcvc.style.display = "none";
-    errorMsgRongFormatcvc.style.display = "none";
-    return;
+    errorMsgWrongFormatcvc.style.display = "none";
+    
   } else if (cvcInput.value == "") {
     errorMsgBlankcvc.style.display = "block";
-    errorMsgRongFormatcvc.style.display = "none";
-    return;
+    errorMsgWrongFormatcvc.style.display = "none";
+    
   } else {
     errorMsgBlankcvc.style.display = "none";
-    errorMsgRongFormatcvc.style.display = "block";
-    return;
+    errorMsgWrongFormatcvc.style.display = "block";
+    
   }
 });
 
@@ -144,29 +144,26 @@ confirmButton.addEventListener("click", (event) => {
     formSection.style.display = "none";
     thanks.style.display = "flex";
     errorMsgBlankName.style.display = "none";
-    errorMsgRongFormatName.style.display = "none";
+    errorMsgWrongFormatName.style.display = "none";
   } else if (cardNameInput.value == "") {
     errorMsgBlankName.style.display = "block";
-    errorMsgRongFormatName.style.display = "none";
+    errorMsgWrongFormatName.style.display = "none";
   } else {
     errorMsgBlankName.style.display = "none";
-    errorMsgRongFormatName.style.display = "block";
+    errorMsgWrongFormatName.style.display = "block";
   }
   // card number
   if (cardNumberInput.value.match(regexNumber)) {
     formSection.style.display = "none";
     thanks.style.display = "flex";
     errorMsgBlankNumber.style.display = "none";
-    errorMsgRongFormatNumber.style.display = "none";
-    
+    errorMsgWrongFormatNumber.style.display = "none";
   } else if (cardNumberInput.value == "") {
     errorMsgBlankNumber.style.display = "block";
-    errorMsgRongFormatNumber.style.display = "none";
-    
+    errorMsgWrongFormatNumber.style.display = "none";
   } else {
     errorMsgBlankNumber.style.display = "none";
-    errorMsgRongFormatNumber.style.display = "block";
-    
+    errorMsgWrongFormatNumber.style.display = "block";
   }
 
   // expiration date month
@@ -174,51 +171,44 @@ confirmButton.addEventListener("click", (event) => {
     formSection.style.display = "none";
     thanks.style.display = "flex";
     errorMsgBlankexpiration.style.display = "none";
-    errorMsgRongFormatexpiration.style.display = "none";
-    return;
+    errorMsgWrongFormatexpiration.style.display = "none";
+    
   } else if (cardDateMonthInput.value == "") {
     errorMsgBlankexpiration.style.display = "block";
-    errorMsgRongFormatexpiration.style.display = "none";
-    return;
+    errorMsgWrongFormatexpiration.style.display = "none";
+    
   } else {
     errorMsgBlankexpiration.style.display = "none";
-    errorMsgRongFormatexpiration.style.display = "block";
-    
+    errorMsgWrongFormatexpiration.style.display = "block";
   }
   // expiration date year
   if (cardDateYearInput.value.match(regexexpiration)) {
     formSection.style.display = "none";
     thanks.style.display = "flex";
     errorMsgBlankexpiration.style.display = "none";
-    errorMsgRongFormatexpiration.style.display = "none";
-    return;
+    errorMsgWrongFormatexpiration.style.display = "none";
+    
   } else if (cardDateYearInput.value == "") {
     errorMsgBlankexpiration.style.display = "block";
-    errorMsgRongFormatexpiration.style.display = "none";
-    return;
+    errorMsgWrongFormatexpiration.style.display = "none";
+    
   } else {
     errorMsgBlankexpiration.style.display = "none";
-    errorMsgRongFormatexpiration.style.display = "block";
-    
+    errorMsgWrongFormatexpiration.style.display = "block";
   }
   // cvc
   if (cvcInput.value.match(regexcvc)) {
     formSection.style.display = "none";
     thanks.style.display = "flex";
     errorMsgBlankcvc.style.display = "none";
-    errorMsgRongFormatcvc.style.display = "none";
-    
+    errorMsgWrongFormatcvc.style.display = "none";
   } else if (cvcInput.value == "") {
     errorMsgBlankcvc.style.display = "block";
-    errorMsgRongFormatcvc.style.display = "none";
-    
+    errorMsgWrongFormatcvc.style.display = "none";
   } else {
     errorMsgBlankcvc.style.display = "none";
-    errorMsgRongFormatcvc.style.display = "block";
-    
+    errorMsgWrongFormatcvc.style.display = "block";
   }
-
-  
 });
 
 // ===================================================================================================================
