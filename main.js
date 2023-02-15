@@ -13,55 +13,9 @@ let cvc = document.querySelector(".cvc");
 // ===========================================//
 // Get Elements in form-container
 
-let cardNumberInput = document.getElementById("cardnumber");
-let cardDateMonthInput = document.getElementById("expirationdateMonth");
-let cardDateYearInput = document.getElementById("expirationdateYear");
-let cvcInput = document.getElementById("securitycode");
-let confirmButton = document.getElementById("confirm");
-
 let formSection = document.querySelector(".form-container");
 let thanks = document.querySelector(".thanks");
-
-
-// name
-let cardNameInput = document.getElementById("nameInput");
-let errorMsgBlankName = document.getElementById("name-blank");
-let errorMsgRongFormatName = document.getElementById("name-rong-format");
-let regexName = /^[a-z\s?]+$/ig;
-
-
-confirmButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  
-  if (cardNameInput.value === "") {
-    formSection.style.display = ""
-    thanks.style.display = "none"
-  } else {
-    formSection.style.display = "none"
-    thanks.style.display = "flex"
-  }
-});
-
-
-cardNameInput.addEventListener("keyup" , () => {
-  if (cardNameInput.value.match(regexName)) {
-    errorMsgBlankName.style.display = "none"
-    errorMsgRongFormatName.style.display = "none"
-  } else if (cardNameInput.value == "") {
-    errorMsgBlankName.style.display = "block"
-    errorMsgRongFormatName.style.display = "none"
-  } else {
-    errorMsgBlankName.style.display = "none"
-    errorMsgRongFormatName.style.display = "block"
-  }
-})
-
-
-
-
-
-
-
+let errorMsg = document.querySelectorAll(".error");
 
 // ===========================================================================================//
 //@@@@@@@@@@@@@@@@@@ FUNCTIONS @@@@@@@@@@@@@@@@@@@@ //
@@ -69,6 +23,203 @@ cardNameInput.addEventListener("keyup" , () => {
 // TODO 2 => Receive error messages when the form is submitted if:
 //            - Any input field is empty
 //            - The card number, expiry date, or CVC fields are in the wrong format
+
+window.onload = function () {
+  errorMsg.forEach((error) => (error.style.display = "none"));
+};
+
+// ========== handle name ============
+let cardNameInput = document.getElementById("nameInput");
+let errorMsgBlankName = document.getElementById("name-blank");
+let errorMsgRongFormatName = document.getElementById("name-rong-format");
+let regexName = /^[a-z\s?]+$/gi;
+
+cardNameInput.addEventListener("keyup", () => {
+  if (cardNameInput.value.match(regexName)) {
+    errorMsgBlankName.style.display = "none";
+    errorMsgRongFormatName.style.display = "none";
+  } else if (cardNameInput.value == "") {
+    errorMsgBlankName.style.display = "block";
+    errorMsgRongFormatName.style.display = "none";
+  } else {
+    errorMsgBlankName.style.display = "none";
+    errorMsgRongFormatName.style.display = "block";
+  }
+});
+
+// ============== handle card number =======================
+let cardNumberInput = document.getElementById("cardnumber");
+let errorMsgBlankNumber = document.getElementById("number-blank");
+let errorMsgRongFormatNumber = document.getElementById("number-rong-format");
+let regexNumber = /^[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}$/;
+
+cardNumberInput.addEventListener("keyup", () => {
+  if (cardNumberInput.value.match(regexNumber)) {
+    errorMsgBlankNumber.style.display = "none";
+    errorMsgRongFormatNumber.style.display = "none";
+    return;
+  } else if (cardNumberInput.value == "") {
+    errorMsgBlankNumber.style.display = "block";
+    errorMsgRongFormatNumber.style.display = "none";
+    return;
+  } else {
+    errorMsgBlankNumber.style.display = "none";
+    errorMsgRongFormatNumber.style.display = "block";
+    return;
+  }
+});
+
+// ============== handle expiration date  =======================
+// ==== Month ====
+let cardDateMonthInput = document.getElementById("expirationdateMonth");
+let errorMsgBlankexpiration = document.getElementById("expirationdate-blank");
+let errorMsgRongFormatexpiration = document.getElementById(
+  "expirationdate-rong-format"
+);
+let regexexpiration = /^\d{1,2}$/g;
+
+cardDateMonthInput.addEventListener("keyup", () => {
+  if (cardDateMonthInput.value.match(regexexpiration)) {
+    errorMsgBlankexpiration.style.display = "none";
+    errorMsgRongFormatexpiration.style.display = "none";
+    return;
+  } else if (cardDateMonthInput.value == "") {
+    errorMsgBlankexpiration.style.display = "block";
+    errorMsgRongFormatexpiration.style.display = "none";
+    return;
+  } else {
+    errorMsgBlankexpiration.style.display = "none";
+    errorMsgRongFormatexpiration.style.display = "block";
+    return;
+  }
+});
+// ==== Year =====
+let cardDateYearInput = document.getElementById("expirationdateYear");
+
+cardDateYearInput.addEventListener("keyup", () => {
+  if (cardDateYearInput.value.match(regexexpiration)) {
+    errorMsgBlankexpiration.style.display = "none";
+    errorMsgRongFormatexpiration.style.display = "none";
+    return;
+  } else if (cardDateYearInput.value == "") {
+    errorMsgBlankexpiration.style.display = "block";
+    errorMsgRongFormatexpiration.style.display = "none";
+    return;
+  } else {
+    errorMsgBlankexpiration.style.display = "none";
+    errorMsgRongFormatexpiration.style.display = "block";
+    return;
+  }
+});
+
+// ============= handle cvc ================
+let cvcInput = document.getElementById("securitycode");
+let errorMsgBlankcvc = document.getElementById("securitycode-blank");
+let errorMsgRongFormatcvc = document.getElementById("securitycode-rong-format");
+let regexcvc = /\d/g;
+
+cvcInput.addEventListener("keyup", () => {
+  if (cvcInput.value.match(regexcvc)) {
+    errorMsgBlankcvc.style.display = "none";
+    errorMsgRongFormatcvc.style.display = "none";
+    return;
+  } else if (cvcInput.value == "") {
+    errorMsgBlankcvc.style.display = "block";
+    errorMsgRongFormatcvc.style.display = "none";
+    return;
+  } else {
+    errorMsgBlankcvc.style.display = "none";
+    errorMsgRongFormatcvc.style.display = "block";
+    return;
+  }
+});
+
+// ============= handle confirm Button ================
+let confirmButton = document.getElementById("confirm");
+confirmButton.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  // name
+  if (cardNameInput.value.match(regexName)) {
+    formSection.style.display = "none";
+    thanks.style.display = "flex";
+    errorMsgBlankName.style.display = "none";
+    errorMsgRongFormatName.style.display = "none";
+  } else if (cardNameInput.value == "") {
+    errorMsgBlankName.style.display = "block";
+    errorMsgRongFormatName.style.display = "none";
+  } else {
+    errorMsgBlankName.style.display = "none";
+    errorMsgRongFormatName.style.display = "block";
+  }
+  // card number
+  if (cardNumberInput.value.match(regexNumber)) {
+    formSection.style.display = "none";
+    thanks.style.display = "flex";
+    errorMsgBlankNumber.style.display = "none";
+    errorMsgRongFormatNumber.style.display = "none";
+    
+  } else if (cardNumberInput.value == "") {
+    errorMsgBlankNumber.style.display = "block";
+    errorMsgRongFormatNumber.style.display = "none";
+    
+  } else {
+    errorMsgBlankNumber.style.display = "none";
+    errorMsgRongFormatNumber.style.display = "block";
+    
+  }
+
+  // expiration date month
+  if (cardDateMonthInput.value.match(regexexpiration)) {
+    formSection.style.display = "none";
+    thanks.style.display = "flex";
+    errorMsgBlankexpiration.style.display = "none";
+    errorMsgRongFormatexpiration.style.display = "none";
+    return;
+  } else if (cardDateMonthInput.value == "") {
+    errorMsgBlankexpiration.style.display = "block";
+    errorMsgRongFormatexpiration.style.display = "none";
+    return;
+  } else {
+    errorMsgBlankexpiration.style.display = "none";
+    errorMsgRongFormatexpiration.style.display = "block";
+    
+  }
+  // expiration date year
+  if (cardDateYearInput.value.match(regexexpiration)) {
+    formSection.style.display = "none";
+    thanks.style.display = "flex";
+    errorMsgBlankexpiration.style.display = "none";
+    errorMsgRongFormatexpiration.style.display = "none";
+    return;
+  } else if (cardDateYearInput.value == "") {
+    errorMsgBlankexpiration.style.display = "block";
+    errorMsgRongFormatexpiration.style.display = "none";
+    return;
+  } else {
+    errorMsgBlankexpiration.style.display = "none";
+    errorMsgRongFormatexpiration.style.display = "block";
+    
+  }
+  // cvc
+  if (cvcInput.value.match(regexcvc)) {
+    formSection.style.display = "none";
+    thanks.style.display = "flex";
+    errorMsgBlankcvc.style.display = "none";
+    errorMsgRongFormatcvc.style.display = "none";
+    
+  } else if (cvcInput.value == "") {
+    errorMsgBlankcvc.style.display = "block";
+    errorMsgRongFormatcvc.style.display = "none";
+    
+  } else {
+    errorMsgBlankcvc.style.display = "none";
+    errorMsgRongFormatcvc.style.display = "block";
+    
+  }
+
+  
+});
 
 // ===================================================================================================================
 // const checkInfo = () => {

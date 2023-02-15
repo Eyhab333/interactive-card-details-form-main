@@ -78,7 +78,7 @@ ul {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 20px;
+  padding: toRem(20);
 }
 
 .icon-complete {
@@ -89,31 +89,31 @@ ul {
 
 .thanks h2 {
   font-weight: 500;
-  font-size: 28px;
-  line-height: 36px;
+  font-size: toRem(28);
+  line-height: toRem(36);
   text-align: center;
-  letter-spacing: 3.42222px;
+  letter-spacing: toRem(3.42222);
   color: #21092f;
-  margin-bottom: 16px;
+  margin-bottom: toRem(16);
 }
 
 .thanks p {
   font-weight: 500;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: toRem(18);
+  line-height: toRem(23);
   text-align: center;
   color: #8f8694;
 }
 
 .continue {
-  margin-top: 48px;
+  margin-top: toRem(48);
   width: 100%;
   background: #21092f;
-  border-radius: 8px;
-  width: 381px;
-  height: 53px;
+  border-radius: toRem(8);
+  width: toRem(381);
+  height: toRem(53);
   color: white;
-  margin-top: 13px;
+  margin-top: toRem(13);
   cursor: pointer;
 }
 
@@ -124,15 +124,15 @@ ul {
   position: relative;
 }
 
-.name-error,
+.error,
 .number-error,
 .date-error,
 .cvc-error {
   position: absolute;
   left: 0;
-  bottom: -22px;
+  bottom: toRem(-22);
   font-weight: 500;
-  font-size: 12px;
+  font-size: toRem(12);
   color: #ff5050;
 }
 
@@ -163,12 +163,12 @@ ul {
     filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
     position: relative;
     margin-bottom: toRem(48);
-    height: 281px;
+    height: toRem(281);
   }
 
   .card {
     width: 90%;
-    border-radius: 10px;
+    border-radius: toRem(10);
   }
 
   .front {
@@ -189,7 +189,7 @@ ul {
   .zeros {
     font-weight: 500;
     font-size: toRem(18);
-    letter-spacing: 3.42222px;
+    letter-spacing: toRem(3.42222);
     color: white;
     margin-bottom: toRem(17);
   }
@@ -203,7 +203,7 @@ ul {
     font-weight: 500;
     font-size: toRem(9);
     line-height: toRem(18);
-    letter-spacing: 2px;
+    letter-spacing: toRem(2);
     text-transform: uppercase;
     color: #ffffff;
   }
@@ -212,7 +212,7 @@ ul {
     font-weight: 500;
     font-size: toRem(9);
     line-height: toRem(18);
-    letter-spacing: 2px;
+    letter-spacing: toRem(2);
     text-transform: uppercase;
     color: #ffffff;
   }
@@ -222,7 +222,7 @@ ul {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(168.73deg, #ffffff 5%, #d2d3d9 91.69%);
-    border-radius: 10px;
+    border-radius: toRem(10);
     padding-top: toRem(14);
     padding-bottom: toRem(11);
     position: absolute;
@@ -232,31 +232,31 @@ ul {
 
   .black-rectangle {
     width: 100%;
-    height: 54px;
+    height: toRem(54);
     background: #2f2f2f;
     margin-bottom: toRem(15);
   }
 
   .grey-rectangle {
-    width: 230.98px;
-    padding: 9px;
+    width: toRem(230);
+    padding: toRem(9);
     background: #adb5be;
-    border-radius: 4px;
+    border-radius: toRem(4);
     display: flex;
     justify-content: center;
     align-items: flex-end;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: toRem(14);
+    line-height: toRem(18);
     text-align: right;
-    letter-spacing: 2px;
+    letter-spacing: toRem(2);
     color: #ffffff;
     margin-bottom: toRem(11);
   }
 
   .pattern {
-    width: 186px;
-    height: 26px;
+    width: toRem(186);
+    height: toRem(26);
   }
 
   // ====================
@@ -264,16 +264,16 @@ ul {
   ::placeholder {
     font-weight: 500;
     font-size: toRem(12);
-    line-height: 23px;
+    line-height: toRem(23);
     color: #21092f;
     opacity: 0.25;
   }
 
   #confirm {
     background: #21092f;
-    border-radius: 8px;
+    border-radius: toRem(8);
     width: 100%;
-    height: 53px;
+    height: toRem(53);
     color: white;
     margin-top: toRem(28);
     cursor: pointer;
@@ -307,8 +307,8 @@ ul {
       "number number"
       "expiration security"
       "confirm confirm";
-    max-width: 400px;
-    padding: 20px;
+    max-width: toRem(400);
+    padding: toRem(20);
     color: #707070;
   }
 
@@ -316,13 +316,13 @@ ul {
     padding-bottom: toRem(9);
     font-size: toRem(12);
     line-height: toRem(15);
-    letter-spacing: 2px;
+    letter-spacing: toRem(2);
     text-transform: uppercase;
     color: #21092f;
   }
 
   input {
-    margin-top: 3px;
+    margin-top: toRem(3);
     padding-left: 16px;
     padding-top: 11px;
     padding-bottom: 11px;
@@ -597,14 +597,3 @@ ul {
   display: none;
 }
 
-.continue {
-  border: 20px solid green;
-  width: 80%;
-  background: #21092f;
-  border-radius: 8px;
-  width: 381px;
-  height: 53px;
-  color: white;
-  margin-top: 13px;
-  cursor: pointer;
-}
