@@ -20,9 +20,53 @@ let errorMsg = document.querySelectorAll(".error");
 // ===========================================================================================//
 //@@@@@@@@@@@@@@@@@@ FUNCTIONS @@@@@@@@@@@@@@@@@@@@ //
 
+// TODO 1 => Fill in the form and see the card details update in real-time
+cardNameInput.oninput = () => {
+  cardName.innerHTML = cardNameInput.value;
+};
+
+cardNumberInput.oninput = () => {
+  cardNumber.innerHTML = cardNumberInput.value;
+};
+
+cardDateMonthInput.oninput = () => {
+  cardDateMonth.innerHTML = cardDateMonthInput.value;
+};
+
+cardDateYearInput.oninput = () => {
+  cardDateYear.innerHTML = cardDateYearInput.value;
+};
+
+cvcInput.oninput = () => {
+  cvc.innerHTML = cvcInput.value;
+};
+
+// function to put space in card number after every 4 numbers
+function cardSpace() {
+  let cardDigit = cardNumberInput.value;
+  if (
+    cardDigit.length == 4 ||
+    cardDigit.length == 9 ||
+    cardDigit.length == 14
+  ) {
+    cardNumberInput.value = cardDigit + " ";
+    cardNumberInput.max = 1;
+  }
+}
+
+cardNumberInput.addEventListener("keypress", () => {
+  return cardSpace();
+});
+// ========================================//
+
 // TODO 2 => Receive error messages when the form is submitted if:
 //            - Any input field is empty
 //            - The card number, expiry date, or CVC fields are in the wrong format
+
+
+
+
+// the hard way 
 
 window.onload = function () {
   errorMsg.forEach((error) => (error.style.display = "none"));
@@ -93,6 +137,7 @@ cardDateMonthInput.addEventListener("keyup", () => {
     return;
   }
 });
+
 // ==== Year =====
 let cardDateYearInput = document.getElementById("expirationdateYear");
 let regexexpiration = /^\d{1,2}$/g;
@@ -115,22 +160,21 @@ cardDateYearInput.addEventListener("keyup", () => {
 // ============= handle cvc ================
 let cvcInput = document.getElementById("securitycode");
 let errorMsgBlankcvc = document.getElementById("securitycode-blank");
-let errorMsgWrongFormatcvc = document.getElementById("securitycode-wrong-format");
+let errorMsgWrongFormatcvc = document.getElementById(
+  "securitycode-wrong-format"
+);
 let regexcvc = /\d/g;
 
 cvcInput.addEventListener("keyup", () => {
   if (cvcInput.value.match(regexcvc)) {
     errorMsgBlankcvc.style.display = "none";
     errorMsgWrongFormatcvc.style.display = "none";
-    
   } else if (cvcInput.value == "") {
     errorMsgBlankcvc.style.display = "block";
     errorMsgWrongFormatcvc.style.display = "none";
-    
   } else {
     errorMsgBlankcvc.style.display = "none";
     errorMsgWrongFormatcvc.style.display = "block";
-    
   }
 });
 
@@ -152,6 +196,7 @@ confirmButton.addEventListener("click", (event) => {
     errorMsgBlankName.style.display = "none";
     errorMsgWrongFormatName.style.display = "block";
   }
+
   // card number
   if (cardNumberInput.value.match(regexNumber)) {
     formSection.style.display = "none";
@@ -172,30 +217,28 @@ confirmButton.addEventListener("click", (event) => {
     thanks.style.display = "flex";
     errorMsgBlankexpiration.style.display = "none";
     errorMsgWrongFormatexpiration.style.display = "none";
-    
   } else if (cardDateMonthInput.value == "") {
     errorMsgBlankexpiration.style.display = "block";
     errorMsgWrongFormatexpiration.style.display = "none";
-    
   } else {
     errorMsgBlankexpiration.style.display = "none";
     errorMsgWrongFormatexpiration.style.display = "block";
   }
+
   // expiration date year
   if (cardDateYearInput.value.match(regexexpiration)) {
     formSection.style.display = "none";
     thanks.style.display = "flex";
     errorMsgBlankexpiration.style.display = "none";
     errorMsgWrongFormatexpiration.style.display = "none";
-    
   } else if (cardDateYearInput.value == "") {
     errorMsgBlankexpiration.style.display = "block";
     errorMsgWrongFormatexpiration.style.display = "none";
-    
   } else {
     errorMsgBlankexpiration.style.display = "none";
     errorMsgWrongFormatexpiration.style.display = "block";
   }
+
   // cvc
   if (cvcInput.value.match(regexcvc)) {
     formSection.style.display = "none";
@@ -211,7 +254,8 @@ confirmButton.addEventListener("click", (event) => {
   }
 });
 
-// ===================================================================================================================
+// short code
+
 // const checkInfo = () => {
 //   const inputs = document.querySelectorAll("input");
 
@@ -239,45 +283,6 @@ confirmButton.addEventListener("click", (event) => {
 //       finish.classList.remove('hide')
 //   }
 // };
-// confirmBtn.addEventListener("click", checkInfo);
+// confirmButton.addEventListener("click", checkInfo);
 
 // ===================================================================================================================
-
-// TODO 1 => Fill in the form and see the card details update in real-time
-cardNameInput.oninput = () => {
-  cardName.innerHTML = cardNameInput.value;
-};
-
-cardNumberInput.oninput = () => {
-  cardNumber.innerHTML = cardNumberInput.value;
-};
-
-cardDateMonthInput.oninput = () => {
-  cardDateMonth.innerHTML = cardDateMonthInput.value;
-};
-
-cardDateYearInput.oninput = () => {
-  cardDateYear.innerHTML = cardDateYearInput.value;
-};
-
-cvcInput.oninput = () => {
-  cvc.innerHTML = cvcInput.value;
-};
-
-// function to put space in card number after every 4 numbers
-function cardSpace() {
-  let cardDigit = cardNumberInput.value;
-  if (
-    cardDigit.length == 4 ||
-    cardDigit.length == 9 ||
-    cardDigit.length == 14
-  ) {
-    cardNumberInput.value = cardDigit + " ";
-    cardNumberInput.max = 1;
-  }
-}
-
-cardNumberInput.addEventListener("keypress", () => {
-  return cardSpace();
-});
-// ========================================//
