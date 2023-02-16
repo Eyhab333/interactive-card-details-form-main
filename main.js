@@ -20,44 +20,6 @@ let errorMsg = document.querySelectorAll(".error");
 // ===========================================================================================//
 //@@@@@@@@@@@@@@@@@@ FUNCTIONS @@@@@@@@@@@@@@@@@@@@ //
 
-// TODO 1 => Fill in the form and see the card details update in real-time
-cardNameInput.oninput = () => {
-  cardName.innerHTML = cardNameInput.value;
-};
-
-cardNumberInput.oninput = () => {
-  cardNumber.innerHTML = cardNumberInput.value;
-};
-
-cardDateMonthInput.oninput = () => {
-  cardDateMonth.innerHTML = cardDateMonthInput.value;
-};
-
-cardDateYearInput.oninput = () => {
-  cardDateYear.innerHTML = cardDateYearInput.value;
-};
-
-cvcInput.oninput = () => {
-  cvc.innerHTML = cvcInput.value;
-};
-
-// function to put space in card number after every 4 numbers
-function cardSpace() {
-  let cardDigit = cardNumberInput.value;
-  if (
-    cardDigit.length == 4 ||
-    cardDigit.length == 9 ||
-    cardDigit.length == 14
-  ) {
-    cardNumberInput.value = cardDigit + " ";
-    cardNumberInput.max = 1;
-  }
-}
-
-cardNumberInput.addEventListener("keypress", () => {
-  return cardSpace();
-});
-// ========================================//
 
 // TODO 2 => Receive error messages when the form is submitted if:
 //            - Any input field is empty
@@ -180,9 +142,13 @@ cvcInput.addEventListener("keyup", () => {
 
 // ============= handle confirm Button ================
 let confirmButton = document.getElementById("confirm");
+
 confirmButton.addEventListener("click", (event) => {
   event.preventDefault();
+  submit()
+});
 
+function submit() {
   // name
   if (cardNameInput.value.match(regexName)) {
     formSection.style.display = "none";
@@ -252,7 +218,46 @@ confirmButton.addEventListener("click", (event) => {
     errorMsgBlankcvc.style.display = "none";
     errorMsgWrongFormatcvc.style.display = "block";
   }
+}
+
+// TODO 1 => Fill in the form and see the card details update in real-time
+cardNameInput.oninput = () => {
+  cardName.innerHTML = cardNameInput.value;
+};
+
+cardNumberInput.oninput = () => {
+  cardNumber.innerHTML = cardNumberInput.value;
+};
+
+cardDateMonthInput.oninput = () => {
+  cardDateMonth.innerHTML = cardDateMonthInput.value;
+};
+
+cardDateYearInput.oninput = () => {
+  cardDateYear.innerHTML = cardDateYearInput.value;
+};
+
+cvcInput.oninput = () => {
+  cvc.innerHTML = cvcInput.value;
+};
+
+// function to put space in card number after every 4 numbers
+function cardSpace() {
+  let cardDigit = cardNumberInput.value;
+  if (
+    cardDigit.length == 4 ||
+    cardDigit.length == 9 ||
+    cardDigit.length == 14
+  ) {
+    cardNumberInput.value = cardDigit + " ";
+    cardNumberInput.max = 1;
+  }
+}
+
+cardNumberInput.addEventListener("keypress", () => {
+  return cardSpace();
 });
+// ========================================//
 
 // short code
 
